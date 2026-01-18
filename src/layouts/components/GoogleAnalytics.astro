@@ -1,35 +1,37 @@
 ---
 import { SITE } from "@/configs/site";
 const isProd = import.meta.env.PROD;
+const gaKey = SITE.googleAnalyticsKey;
 ---
 
-{isProd && (
-  <>
-  <script
-    async
-    src={`https://www.googletagmanager.com/gtag/js?id=${SITE.googleAnalyticsKey}`}
-  />
+{
+  isProd && (
+    <>
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${gaKey}`}
+      />
 
-  <script is:inline>
-    const key = `${JSON.stringify(SITE.googleAnalyticsKey)}`;
+      <script is:inline>
+        {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${gaKey}');
+      `}
+      </script>
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", key);
-  </script>
-
-  {/* Pour la navigation client-side d'Astro */}
-  <script is:inline>
-    document.addEventListener('astro:page-load', () => {
-      if (typeof gtag === 'function') {
-        gtag('event', 'page_view', {
-          page_path: window.location.pathname,
+      <script is:inline>
+        {`
+        document.addEventListener('astro:page-load', () => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'page_view', {
+              page_path: window.location.pathname,
+            });
+          }
         });
-      }
-    });
-  </script>
-  </>
-)}
+      `}
+      </script>
+    </>
+  )
+}
