@@ -3,11 +3,12 @@ import { SITE } from "@/configs/site";
 import Edit from "@/icons/edit.svg";
 
 const slug: string = Astro.url.pathname;
+const gitHubUrl = `${SITE.repo}/blob/main/src/content${slug.replace(/\/$/, "")}.mdx`;
 ---
 
 <span class="edit-on-github">
   <Edit />
-  <a href=`${SITE.repo}/blob/main/src/content${slug}.mdx` target="_blank">
+  <a href={gitHubUrl} target="_blank">
     <span class="text"> Modifier sur GitHub </span>
   </a>
 </span>
