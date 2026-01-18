@@ -1,6 +1,7 @@
 ---
 import { SITE } from "@/configs/site";
 import HeadMeta from "./components/HeadMeta.astro";
+import GoogleAnalytics from "./components/GoogleAnalytics.astro";
 
 const { title, desc, ogImage, favicon } = Astro.props;
 ---
@@ -9,6 +10,7 @@ const { title, desc, ogImage, favicon } = Astro.props;
 <html lang={SITE.locale}>
   <head>
     <HeadMeta title={title} ogImage={ogImage} favicon={favicon} desc={desc} />
+    <GoogleAnalytics />
     <slot name="head" />
   </head>
 
