@@ -15,4 +15,5 @@ export default defineConfig({
     remarkPlugins: [remarkDirective, remarkChecklist, remarkFractions],
   },
   site: "https://heysimonarnold.github.io",
+  trailingSlash: "never",
 });
