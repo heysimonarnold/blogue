@@ -14,4 +14,6 @@ export default defineConfig({
     smartypants: true,
     remarkPlugins: [remarkDirective, remarkChecklist, remarkFractions],
   },
+  site: "https://heysimonarnold.github.io",
+  base: "/blogue",
 });

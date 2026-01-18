@@ -13,7 +13,7 @@ const items: PageListingItem[] = topLevelEntries
   .sort(
     (a, b) =>
       new Date(b.data.dateCreated).getTime() -
-      new Date(a.data.dateCreated).getTime()
+      new Date(a.data.dateCreated).getTime(),
   )
   .map((entry) => ({
     title: entry.data.title,
@@ -23,5 +23,5 @@ const items: PageListingItem[] = topLevelEntries
 ---
 
 <DefaultLayout title="Blogue" type="page">
-  <PageListing basePath="/blogue" items={items} />
+  <PageListing basePath="/blogue/blogue" items={items} />
 </DefaultLayout>

@@ -1,8 +1,8 @@
 {
-  "name": "simon-arnold-blog",
+  "name": "simon-arnold-blogue",
   "type": "module",
   "version": "0.0.1",
-  "description": "Blog de Simon Arnold - Développement web, tutoriels et plus.",
+  "description": "Blogue de Simon Arnold - Développement web, tutoriels et plus.",
   "author": "Simon Arnold <heysimonarnold@gmail.com>",
   "scripts": {
     "dev": "astro dev",
