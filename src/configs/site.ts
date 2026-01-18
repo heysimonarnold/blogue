@@ -2,6 +2,7 @@ export interface Site {
   author: string;
   desc: string;
   favicon: string;
+  googleAnalyticsKey: string;
   lang: string;
   locale: string;
   ogImage: string;
@@ -14,6 +15,7 @@ export const SITE: Site = {
   author: "Simon Arnold",
   desc: "Site perso de Simon Arnold - Développeur fullstack, formateur et créateur de contenu.",
   favicon: "/favicon.svg",
+  googleAnalyticsKey: "G-ETQ4VQTXJ2",
   lang: "fr",
   locale: "fr-CA",
   ogImage: "/og-image.png",
