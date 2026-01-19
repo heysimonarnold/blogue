@@ -249,6 +249,16 @@ input[type="radio"] {
   clip-path: polygon(51% 0, 100% 0, 100% 100%, 0 100%, 0 83.5%);
 }
 
+.upper-forearm {
+  top: 29.25%;
+  left: 35%;
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 50%;
+  background-color: var(--blue);
+  clip-path: polygon(50% 0, 120% 0, 60% 35%, 0 10%);
+}
+
 .lower-forearm {
   top: 31.75%;
   left: 35%;
