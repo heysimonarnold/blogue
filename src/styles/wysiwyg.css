@@ -32,13 +32,23 @@
   }
 
   p {
+    --paragraph-color: currentColor;
     text-wrap: pretty;
   }
 
   blockquote {
-    opacity: 0.8;
+    color: color-mix(in hsl, currentColor 60%, transparent);
     font-size: 0.9em;
+    font-style: italic;
     font-family: var(--font-heading);
+
+    em {
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-style: normal;
+      opacity: 1;
+    }
   }
 
   & > p:first-of-type,
