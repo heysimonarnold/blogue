@@ -18,7 +18,7 @@ const { Content } = await entry.render();
 const latest = entries
   .filter((entry) => entry.data.dateCreated)
   .sort((a, b) => b.data.dateCreated.valueOf() - a.data.dateCreated.valueOf())
-  .slice(0, 5);
+  .slice(0, 6);
 ---
 
 <DefaultLayout title="Simon Arnold" type="website">
