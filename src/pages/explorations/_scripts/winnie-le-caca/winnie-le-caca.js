@@ -81,7 +81,8 @@ class Winnie {
     this.updateTextBlock(this.dom.text1, obj.no1);
     this.updateTextBlock(this.dom.text2, obj.no2);
 
-    if (obj.source) {
+    if (obj.source && obj.source.trim() !== "") {
+      console.log("source", obj.source);
       this.dom.source.style.display = "flex";
       this.dom.url.textContent = obj.source;
       this.dom.url.href = obj.source;
