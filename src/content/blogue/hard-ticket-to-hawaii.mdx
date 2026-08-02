@@ -41,11 +41,33 @@ Au final, cette version reste bien sûr le **même film de série B totalement a
 
 Et surtout: la scène du frisbee est toujours là. Impossible de couper ça 😄
 
+## Stats
+
+- **Durée originale**: 96 minutes<br />
+- **Nouvelle durée**: 63 minutes<br />
+- **Temps coupé**: 33 min _(34% du film)_
+
 ## Fun facts
 
-- L’actrice **Dona** Speir joue le rôle de **Donna** 
+- L’actrice **Dona** Speir joue le rôle de **Donna**.
 - Dans sa biographie, Dona Speir avoue avoir été sous l’effet de l’alcool pendant la majeure partie du tournage. Soyons honnêtes, ça paraît 😅
 
-**Durée originale**: 96 minutes<br />
-**Nouvelle durée**: 63 minutes<br />
-**Temps coupé**: 33 min _(34% du film)_
+## FFMPEG
+Commande utilisée pour améliorer la qualité de l'image
+
+```
+ffmpeg -i hawaii-raw.mov \
+> -vf "hqdn3d=1.0:1.0:4:4,\
+> eq=contrast=1.03:saturation=1.05,\
+> unsharp=3:3:0.4" \
+> -c:v libx264 \
+> -preset veryslow \
+> -crf 17 \
+> -c:a aac -b:a 320k \
+> -movflags +faststart \
+> hawaii_remastered.mp4
+```
+
+## Commentaires reçus
+> Ha I just watched it. That movie is so silly. LOL appreciated the shorter runtime. I don't think I'm going to put myself through the full version again ever. 
+<div style="text-align: right;">&mdash; Limio _(utilisateur Reddit)_</div>
